@@ -14,7 +14,7 @@
 	</welcome-file-list>
 	<filter>
 		<filter-name>Struts2</filter-name>
-		<filter-class>org.apache.struts2.dispatcher.filterDispatcher</filter-class>
+		<filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
 	</filter>
 
 	<filter-mapping>
