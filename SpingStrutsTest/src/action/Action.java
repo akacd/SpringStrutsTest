@@ -23,6 +23,15 @@ public class Action extends ActionSupport {
 	public void execute(String str){
 		service.execute(getMessage());
 	}
+	public String selectSysDate(){
+		try{
+		String str=service.selectSysDate();
+		message=str;
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return SUCCESS;
+	}
 
 	/**
 	 * @return the message

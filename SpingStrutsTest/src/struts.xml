@@ -6,5 +6,8 @@
 		<action name="test" class="Action" method="execute">
 			<result name="success">jsp/test.jsp</result>
 		</action>
+		<action name="sysDate" class="Action" method="selectSysDate">
+			<result name="success">jsp/test.jsp</result>
+		</action>
 	</package>
 </struts>

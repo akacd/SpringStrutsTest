@@ -9,4 +9,5 @@ package service;
  */
 public interface Service {
 	public void execute(String str);
+	public String selectSysDate();
 }
