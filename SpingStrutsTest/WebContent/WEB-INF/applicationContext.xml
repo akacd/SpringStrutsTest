@@ -6,8 +6,8 @@
     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
     http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
-    default-autowire="byName">
-    
+	default-autowire="byName">
+
 	<description>SpringStrutsTest</description>
 	<bean id="Action" class="action.Action">
 		<property name="message">
@@ -15,4 +15,17 @@
 		</property>
 	</bean>
 	<bean name="service" class="service.ServiceImpl"></bean>
+
+	<bean id="daoImpl" class="dao.DaoImpl">
+	  	<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation" value="/WEB-INF/sqlMap-config.xml" />
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:comp/env/jdbc/pipadminDS1" />
+	</bean>
 </beans>
